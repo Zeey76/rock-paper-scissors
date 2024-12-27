@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link href="./output.css" rel="stylesheet" />
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+  </head>
+  <body
+    class="flex h-screen items-center justify-center bg-background-radial p-5"
+  >
+    <div
+      class="container z-0 h-screen w-full flex-col items-center justify-center"
+    >
+      <div class="mx-auto flex h-screen w-full flex-col items-center gap-16">
+        <div
+          class="flex w-full max-w-lg flex-shrink-0 flex-row items-center justify-between rounded-md border-2 border-neutral-headerOutline p-3"
+        >
+          <img src="./images/logo.svg" class="h-16 w-16" />
+          <div
+            class="flex flex-col items-center rounded-md bg-white p-3 shadow-lg"
+          >
+            <p
+              class="text-xs font-semibold uppercase tracking-wide text-neutral-scoreText"
+            >
+              Score
+            </p>
+            <p
+              class="score text-4xl font-bold -tracking-tighter text-neutral-darkText"
+              style="letter-spacing: -0.1em"
+            >
+              0
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="moves grid flex-grow grid-cols-2 gap-6 items-start"
+          style="
+            /* background-image: url(&quot;./images/bg-triangle.svg&quot;); */
+            background-size: 80%;
+            background-repeat: no-repeat;
+            grid-template-rows: auto auto; /* Two rows always */
+          "
+        >
+          <!-- Paper Button -->
+          <button
+            class="game-button flex flex-col items-center justify-center"
+            style="width: 8rem; height: 8rem; position: relative"
+            id="paper"
+          >
+            <div
+              class="flex items-center justify-center"
+              style="width: 8rem; height: 8rem"
+            >
+              <div
+                class="rounded-full"
+                style="
+                  background: linear-gradient(
+                    to right,
+                    hsl(230, 89%, 62%),
+                    hsl(230, 89%, 65%)
+                  );
+                  width: 7rem;
+                  height: 7rem;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
+                <div
+                  class="flex items-center justify-center rounded-full bg-white"
+                  style="
+                    width: 5rem;
+                    height: 5rem;
+                    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.2);
+                  "
+                >
+                  <img
+                    src="./images/icon-paper.svg"
+                    class="h-10 w-10 object-contain"
+                  />
+                </div>
+              </div>
+            </div>
+          </button>
+
+          <!-- Scissors Button -->
+          <button
+            class="game-button flex items-center justify-center"
+            style="width: 8rem; height: 8rem"
+            id="scissors"
+          >
+            <div
+              class="flex items-center justify-center"
+              style="width: 8rem; height: 8rem"
+            >
+              <!-- Gradient Border -->
+              <div
+                class="flex items-center justify-center rounded-full"
+                style="
+                  background: linear-gradient(
+                    to right,
+                    hsl(39, 89%, 49%),
+                    hsl(40, 84%, 53%)
+                  );
+                  width: 7rem;
+                  height: 7rem;
+                "
+              >
+                <!-- White Background with Image and Inner Shadow -->
+                <div
+                  class="flex items-center justify-center rounded-full bg-white"
+                  style="
+                    width: 5rem;
+                    height: 5rem;
+                    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.2);
+                  "
+                >
+                  <img
+                    src="./images/icon-scissors.svg"
+                    class="h-10 w-10 object-contain"
+                  />
+                </div>
+              </div>
+            </div>
+          </button>
+
+          <!-- Rock Button (last button in second row) -->
+          <button
+            class="game-button col-span-2 mx-auto flex items-center justify-center"
+            style="width: 8rem; height: 8rem"
+            id="rock"
+          >
+            <div
+              class="flex items-center justify-center"
+              style="width: 8rem; height: 8rem"
+            >
+              <!-- Gradient Border -->
+              <div
+                class="flex items-center justify-center rounded-full"
+                style="
+                  background: linear-gradient(
+                    to right,
+                    hsl(349, 71%, 52%),
+                    hsl(349, 70%, 56%)
+                  );
+                  width: 7rem;
+                  height: 7rem;
+                "
+              >
+                <!-- White Background with Image and Inner Shadow -->
+                <div
+                  class="flex items-center justify-center rounded-full bg-white"
+                  style="
+                    width: 5rem;
+                    height: 5rem;
+                    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.2);
+                  "
+                >
+                  <img
+                    src="./images/icon-rock.svg"
+                    class="h-10 w-10 object-contain"
+                  />
+                </div>
+              </div>
+            </div>
+          </button>
+        </div>
+
+        <div
+          class="rules-btn flex-shrink-0 rounded-md border-2 border-neutral-darkText px-8 py-2"
+        >
+          <button
+            class="text-sm font-semibold uppercase tracking-wider text-white"
+          >
+            Rules
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="hide rules-of-game fixed bottom-0 left-0 top-0 z-10 h-full w-full items-center justify-center bg-black bg-opacity-30"
+    >
+      <div
+        class="rules flex flex-col items-center justify-evenly rounded-sm bg-white"
+      >
+        <h2 class="text-2xl font-bold uppercase text-neutral-darkText">
+          Rules
+        </h2>
+        <img src="./images/image-rules.svg" class="rules-img" />
+        <div class="close-btn">
+          <button><img src="./images/icon-close.svg" /></button>
+        </div>
+      </div>
+    </div>
+    <script src="./java.js"></script>
+  </body>
+</html>
