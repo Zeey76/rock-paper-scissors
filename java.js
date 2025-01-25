@@ -83,6 +83,7 @@ function computerMove(choice) {
           <img
             src="./images/icon-${choice}.svg"
             class="h-10 w-10 object-contain"
+            alt=""
           />
         </div>
       </div>
@@ -126,7 +127,7 @@ function updateScore(result) {
 }
 
 function playAgain() {
-  moves.classList.remove("column")
+  moves.classList.remove("column");
   moves.innerHTML = `
           <button
             class="game-button flex flex-col items-center justify-center"
@@ -163,6 +164,7 @@ function playAgain() {
                   <img
                     src="./images/icon-paper.svg"
                     class="h-10 w-10 object-contain"
+                    alt=""
                   />
                 </div>
               </div>
@@ -201,6 +203,7 @@ function playAgain() {
                   <img
                     src="./images/icon-scissors.svg"
                     class="h-10 w-10 object-contain"
+                    alt=""
                   />
                 </div>
               </div>
@@ -238,6 +241,7 @@ function playAgain() {
                   <img
                     src="./images/icon-rock.svg"
                     class="h-10 w-10 object-contain"
+                    alt=""
                   />
                 </div>
               </div>
